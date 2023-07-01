@@ -22,7 +22,7 @@ class Department(BaseModel):
         return self.title
 
     @property
-    def total_salary(self) -> int:
+    def employees_total_salary(self) -> int:
         return int(self.employees.aggregate(total_salary=Sum('salary'))['total_salary'])
 
     @property
